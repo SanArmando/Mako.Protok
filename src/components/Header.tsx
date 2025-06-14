@@ -15,15 +15,15 @@ export function Header({ cartCount, onCartClick }: HeaderProps) {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1">
               <Phone size={14} />
-              <span>+1 (555) 123-4567</span>
+              <span>+57 300 123 4567</span>
             </div>
             <div className="flex items-center gap-1">
               <MapPin size={14} />
-              <span>Free delivery within 5km</span>
+              <span>Domicilios gratis en Bogotá</span>
             </div>
           </div>
           <div>
-            <span>⏰ Open until 11:00 PM</span>
+            <span>⏰ Abierto hasta las 11:00 PM</span>
           </div>
         </div>
       </div>
@@ -37,8 +37,8 @@ export function Header({ cartCount, onCartClick }: HeaderProps) {
               <span className="text-white font-bold text-xl">🍔</span>
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">QuickBite</h1>
-              <p className="text-xs text-gray-500">Fast & Fresh</p>
+              <h1 className="text-2xl font-bold text-gray-900">Mako.Protok</h1>
+              <p className="text-xs text-gray-500">Comida Rápida Premium</p>
             </div>
           </div>
 
@@ -48,7 +48,7 @@ export function Header({ cartCount, onCartClick }: HeaderProps) {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
               <input
                 type="text"
-                placeholder="Search for delicious food..."
+                placeholder="Busca tu comida favorita..."
                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               />
             </div>

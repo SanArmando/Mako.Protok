@@ -15,20 +15,20 @@ export function Hero() {
       <div className="relative max-w-7xl mx-auto px-4 py-20">
         <div className="max-w-2xl">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Craving Something
-            <span className="text-yellow-300"> Delicious?</span>
+            ¿Antojo de Algo
+            <span className="text-yellow-300"> Delicioso?</span>
           </h1>
           <p className="text-xl mb-8 text-gray-100">
-            Fresh, fast, and flavorful meals delivered straight to your door. 
-            Experience the taste of premium fast food.
+            Comida fresca, rápida y llena de sabor, entregada directamente a tu puerta. 
+            Experimenta el sabor de la comida rápida premium en Colombia.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-lg">
-              Order Now
+              Pedir Ahora
             </button>
             <button className="border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-full font-semibold text-lg transition-all">
-              View Menu
+              Ver Menú
             </button>
           </div>
 
@@ -37,24 +37,24 @@ export function Hero() {
               <div className="bg-white bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
                 <ChefHat size={24} />
               </div>
-              <h3 className="font-semibold mb-1">Fresh Made</h3>
-              <p className="text-sm text-gray-200">Prepared daily</p>
+              <h3 className="font-semibold mb-1">Recién Hecho</h3>
+              <p className="text-sm text-gray-200">Preparado diariamente</p>
             </div>
             
             <div className="text-center">
               <div className="bg-white bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
                 <Clock size={24} />
               </div>
-              <h3 className="font-semibold mb-1">Fast Delivery</h3>
-              <p className="text-sm text-gray-200">30 min or less</p>
+              <h3 className="font-semibold mb-1">Entrega Rápida</h3>
+              <p className="text-sm text-gray-200">30 min o menos</p>
             </div>
             
             <div className="text-center">
               <div className="bg-white bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
                 <Truck size={24} />
               </div>
-              <h3 className="font-semibold mb-1">Free Shipping</h3>
-              <p className="text-sm text-gray-200">Orders over $25</p>
+              <h3 className="font-semibold mb-1">Envío Gratis</h3>
+              <p className="text-sm text-gray-200">Pedidos sobre $50.000</p>
             </div>
           </div>
         </div>

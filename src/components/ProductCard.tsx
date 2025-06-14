@@ -24,6 +24,15 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : 0;
 
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat('es-CO', {
+      style: 'currency',
+      currency: 'COP',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(price);
+  };
+
   return (
     <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden group">
       <div className="relative overflow-hidden">
@@ -37,7 +46,7 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
         <div className="absolute top-3 left-3 flex flex-col gap-2">
           {product.isNew && (
             <span className="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-              NEW
+              NUEVO
             </span>
           )}
           {product.isPopular && (
@@ -82,11 +91,11 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-2xl font-bold text-orange-600">
-              ${product.price.toFixed(2)}
+              {formatPrice(product.price)}
             </span>
             {product.originalPrice && (
               <span className="text-lg text-gray-400 line-through">
-                ${product.originalPrice.toFixed(2)}
+                {formatPrice(product.originalPrice)}
               </span>
             )}
           </div>

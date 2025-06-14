@@ -18,6 +18,15 @@ export function Cart({ isOpen, onClose, items, onUpdateQuantity, onRemove }: Car
   const total = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat('es-CO', {
+      style: 'currency',
+      currency: 'COP',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(price);
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -30,7 +39,7 @@ export function Cart({ isOpen, onClose, items, onUpdateQuantity, onRemove }: Car
           <div className="flex items-center justify-between p-4 border-b">
             <h2 className="text-xl font-bold flex items-center gap-2">
               <ShoppingBag size={20} />
-              Your Order ({itemCount})
+              Tu Pedido ({itemCount})
             </h2>
             <button
               onClick={onClose}
@@ -45,8 +54,8 @@ export function Cart({ isOpen, onClose, items, onUpdateQuantity, onRemove }: Car
             {items.length === 0 ? (
               <div className="text-center py-12">
                 <ShoppingBag size={48} className="mx-auto text-gray-300 mb-4" />
-                <p className="text-gray-500">Your cart is empty</p>
-                <p className="text-sm text-gray-400 mt-2">Add some delicious items to get started!</p>
+                <p className="text-gray-500">Tu carrito está vacío</p>
+                <p className="text-sm text-gray-400 mt-2">¡Agrega algunos productos deliciosos para comenzar!</p>
               </div>
             ) : (
               <div className="space-y-4">
@@ -60,7 +69,7 @@ export function Cart({ isOpen, onClose, items, onUpdateQuantity, onRemove }: Car
                     
                     <div className="flex-1">
                       <h3 className="font-semibold text-sm">{item.name}</h3>
-                      <p className="text-orange-600 font-bold">${item.price.toFixed(2)}</p>
+                      <p className="text-orange-600 font-bold">{formatPrice(item.price)}</p>
                       
                       <div className="flex items-center gap-2 mt-2">
                         <button
@@ -98,15 +107,15 @@ export function Cart({ isOpen, onClose, items, onUpdateQuantity, onRemove }: Car
             <div className="p-4 border-t bg-gray-50">
               <div className="flex justify-between items-center mb-4">
                 <span className="text-lg font-semibold">Total:</span>
-                <span className="text-2xl font-bold text-orange-600">${total.toFixed(2)}</span>
+                <span className="text-2xl font-bold text-orange-600">{formatPrice(total)}</span>
               </div>
               
               <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-full font-semibold text-lg transition-colors">
-                Proceed to Checkout
+                Proceder al Pago
               </button>
               
               <p className="text-xs text-gray-500 text-center mt-2">
-                Free delivery on orders over $25
+                Envío gratis en pedidos sobre $50.000
               </p>
             </div>
           )}

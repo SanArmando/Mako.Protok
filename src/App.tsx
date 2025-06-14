@@ -12,12 +12,12 @@ interface CartItem extends Product {
 }
 
 function App() {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [activeCategory, setActiveCategory] = useState('Todos');
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   const filteredProducts = useMemo(() => {
-    if (activeCategory === 'All') {
+    if (activeCategory === 'Todos') {
       return products;
     }
     return products.filter(product => product.category === activeCategory);
@@ -74,12 +74,12 @@ function App() {
       <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-2">
-            {activeCategory === 'All' ? 'Our Menu' : activeCategory}
+            {activeCategory === 'Todos' ? 'Nuestro Menú' : activeCategory}
           </h2>
           <p className="text-gray-600">
-            {activeCategory === 'All' 
-              ? `Explore our complete menu of ${products.length} delicious items`
-              : `${filteredProducts.length} items in ${activeCategory}`
+            {activeCategory === 'Todos' 
+              ? `Explora nuestro menú completo de ${products.length} productos deliciosos`
+              : `${filteredProducts.length} productos en ${activeCategory}`
             }
           </p>
         </div>
@@ -96,7 +96,7 @@ function App() {
 
         {filteredProducts.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">No items found in this category.</p>
+            <p className="text-gray-500 text-lg">No se encontraron productos en esta categoría.</p>
           </div>
         )}
       </main>
